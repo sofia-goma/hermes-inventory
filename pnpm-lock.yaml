@@ -6,6 +6,8 @@ settings:
 
 importers:
 
+  .: {}
+
   app/api:
     dependencies:
       cors:
