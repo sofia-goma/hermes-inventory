@@ -3,20 +3,35 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 export default function Register() {
-   const { register } = useForm();
+   const { register, handleSubmit } = useForm();
    const navigate = useNavigate();
    const goToHome = (path) => {
       if (!path) return;
       navigate(path);
    }
+   const onSubmit = async (data) => {
+      alert('execution started');
+      try {
+         const resp = await axios.post('http://localhost:8000/api/users', {
+            email: data.userEmail,
+            password: data.userPassword
+         });
+         const result = await resp.data;
+         console.log(result);
+      } catch (err) { 
+         console.warn(err.message);
+      }
+   };
+
    return (
       <section class="bg-gray-50">
          <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0">
                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                  <form class="space-y-4 md:space-y-6" action="#">
+                  <form class="space-y-4 md:space-y-6" onSubmit={handleSubmit(onSubmit)}>
                      <Input
                         register={register}
                         inputType="email"
@@ -41,9 +56,9 @@ export default function Register() {
 
                      <Button
                         title='Creer un nouveau compte'
+                        type="submit"
                         className="w-full bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 px-5 py-3.5"
                         classNameT="text-white text-[14px]"
-                        handleClick={() => goToHome('/')}
                      />
 
 

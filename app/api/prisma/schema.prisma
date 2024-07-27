@@ -12,3 +12,46 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+// roles 
+
+enum Role {
+  ADMIN
+  USER
+}
+
+// stoct status
+
+enum Status {
+  DELIVIVRE
+  NO_DELIVRE
+}
+
+// user Model
+
+model User {
+  id       String   @id @unique @default(uuid())
+  email    String   @unique
+  password String
+  role     Role     @default(USER)
+  created  DateTime @default(now())
+
+  @@map("user")
+}
+
+//  stock Model
+
+model Stock {
+  id           String   @id @unique @default(uuid())
+  product      String
+  category     String
+  status       Status   @default(NO_DELIVRE)
+  deliveryDate DateTime?
+  created      DateTime @default(now())
+  lastUpdated  DateTime @default(now())
+  price        Int
+  avatarURL    String?
+  detail       String?
+
+  @@map("stock")
+}
