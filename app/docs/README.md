@@ -1,1 +1,1 @@
-# Documentation
+# HERMES-INVENTORY doc

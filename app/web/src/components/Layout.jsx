@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import Product from "./Product";
 // import DeleteModal from "./DeleteModal";
 import { useState } from "react";
-// import Shared from "./shared/shared";
+import Shared from "./shared/shared";
 // import PreviewDrawer from "./shared/PreviewDrawer";
 // import ModalHeader from "./shared/ModalHeader";
 import TableNavigation from "./TableNavigation";
@@ -42,6 +42,7 @@ export default function Layout() {
          <Product />
          <Product />
          <TableNavigation />
+         <Shared />
          {/* <Outlet /> */}
       </>
    );

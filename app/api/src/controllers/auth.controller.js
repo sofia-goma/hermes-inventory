@@ -20,9 +20,13 @@ export default class AuthController {
          });
          if (user && await bcrypt.compare(password, user.password)) {
             const token = jwt.sign({ userId: user.id, role: user.role }, mainConfig.JWT_SECRET);
-            res.status(200).send(token);
+            res.status(200).json({
+               userId: user.id,
+               message: 'Login successful',
+               accessToken: token
+            });
          } else {
-            res.status(401).send("Invalid credentials");
+            res.send("Invalid credentials");
             return;
          }
       } catch (err) {

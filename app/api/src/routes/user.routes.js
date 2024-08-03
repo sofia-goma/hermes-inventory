@@ -1,6 +1,7 @@
 "use client";
 import { Router } from "express";
 import UserController from "../controllers/user.controller.js";
+import authenticateJWT from '../middlewares/authenticateJWT.js'
 
 
 const router = Router();

@@ -4,8 +4,12 @@ import { useForm } from "react-hook-form";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import appConfig from "../config/app.config";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Login() {
+    console.log(appConfig.BACKEND_API_URL);  // http://localhost:8000/auth/login
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const goToHome = (path) => {
@@ -14,18 +18,24 @@ export default function Login() {
     }
     const onSubmit = async (data) => {
         try {  
-            const resp = await axios.post('http://localhost:8000/auth/login', {
+            const resp = await axios.post(`${appConfig.BACKEND_API_URL}/auth/login`, {
                 email: data.userEmail,
                 password: data.userPassword
             });
+            localStorage.clear();
+            sessionStorage.clear();
             const result = await resp.data;
-            localStorage.setItem('accessToken', result);
-            sessionStorage.setItem('accessToken', result);
-            console.log(result);
-            console.log(data);
-            alert('form submitted');
+            localStorage.setItem('accessToken', result.accessToken);
+            sessionStorage.setItem('accessToken', result.accessToken);
+            localStorage.setItem('userId', result.userId);
+            sessionStorage.setItem('userId', result.userId);
+            if (result.message) {
+                toast.success(result.message? result.message : null);
+                goToHome('/');
+            }
+            toast.error(result);
         } catch (err) {
-            console.warn(err.message);
+            toast.warn(err.message);
         }
     }
     return (
@@ -57,13 +67,14 @@ export default function Login() {
                             />
 
 
-                            <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                                N'avez-vous pas un compte? <Link to="/register" class="font-medium text-primary-600 hover:underline dark:text-primary-500">S'enregistrer</Link>
+                            <p class="text-sm font-light text-gray-500">
+                                N'avez-vous pas un compte? <Link to="/register" class="font-medium text-primary-600 hover:underline">S'enregistrer</Link>
                             </p>
                         </form>
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </section>
     );
 }

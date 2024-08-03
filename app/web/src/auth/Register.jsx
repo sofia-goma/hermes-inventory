@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
+import appConfig from '../config/app.config';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Register() {
+   // console.log(appConfig.BACKEND_API_URL);
    const { register, handleSubmit } = useForm();
    const navigate = useNavigate();
    const goToHome = (path) => {
@@ -13,16 +17,22 @@ export default function Register() {
       navigate(path);
    }
    const onSubmit = async (data) => {
-      alert('execution started');
       try {
-         const resp = await axios.post('http://localhost:8000/api/users', {
-            email: data.userEmail,
-            password: data.userPassword
+         if (data.password !== data.confirmpassword) {
+            toast.warn('Les mots de passe ne sont pas identiques');
+            return;
+         }
+         const resp = await axios.post(`${appConfig.BACKEND_API_URL}/api/users`, {
+            email: data.email,
+            password: data.password
          });
          const result = await resp.data;
-         console.log(result);
-      } catch (err) { 
-         console.warn(err.message);
+         toast.success(result.message? result.message : null);
+         toast.error(result.error? result.error : null);
+         // console.log(result.error);
+         goToHome('/login')
+      } catch (err) {
+         toast.error(err.message);
       }
    };
 
@@ -36,21 +46,21 @@ export default function Register() {
                         register={register}
                         inputType="email"
                         label="Votre Adresse Email"
-                        tagRef="userEmail"
+                        tagRef="email"
                         placeholder="jacques@gmail.com"
                      />
                      <Input
                         register={register}
                         inputType="password"
                         label="Votre Mot de passe"
-                        tagRef="userPassword"
+                        tagRef="password"
                         placeholder="******"
                      />
                      <Input
                         register={register}
                         inputType="password"
                         label="Confirmer votre Mot de passe"
-                        tagRef="userConfirmPassword"
+                        tagRef="confirmpassword"
                         placeholder="******"
                      />
 
@@ -69,6 +79,7 @@ export default function Register() {
                </div>
             </div>
          </div >
+         <ToastContainer theme="light" />
       </section >
    );
 }
