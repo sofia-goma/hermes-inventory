@@ -15,12 +15,12 @@ export default function Header() {
       goToLogin('/login')
    }
    return (
-      <header className="bg-white stick w-full z-20 start-0 border-b border-gray-200 sticky top-0">
-         <div class="mx-auto max-w-screen-2xl w-full px-4 container">
+      <header className="bg-white w-full border-b border-gray-200 sticky top-0">
+         <div class="w-full px-2 md:px-0 container">
             <div class="overflow-hidden">
-               <div class="flex flex-1 w-full items-center justify-between space-y-2 md:space-y-0 md:space-x-4 p-4">
-                  <h1 className="text-gray-500 font-bold italic">
-                     HERMESTOCK
+               <div class="flex flex-1 w-full items-center justify-between py-3">
+                  <h1 className="text-gray-500 font-bold text-xl">
+                     HERMES-INVENTORY
                   </h1>
                   <div class="flex items-end justify-end space-y-3 md:space-y-0 md:space-x-3">
 

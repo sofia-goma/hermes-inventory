@@ -1,0 +1,290 @@
+const data = [
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   },
+   {
+      id: '12345',
+      product: 'Sample Product',
+      category: 'Electronics',
+      status: 'NO_DELIVRE',
+      deliveryDate: '2024-12-31T00:00:00.000Z',
+      created: '2024-01-01T00:00:00.000Z',
+      lastUpdated: '2024-07-01T00:00:00.000Z',
+      price: 9999, // Price in cents
+      detail: 'This is a sample product detail.',
+   }
+];
+
+export default data;

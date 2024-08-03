@@ -50,7 +50,6 @@ model Stock {
   created      DateTime @default(now())
   lastUpdated  DateTime @default(now())
   price        Int
-  avatarURL    String?
   detail       String?
 
   @@map("stock")
