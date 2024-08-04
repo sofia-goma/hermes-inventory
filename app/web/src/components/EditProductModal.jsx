@@ -106,28 +106,24 @@ export default function EditProductModal({ isOpen, onClose, product, onSave }) {
             />
 
             <div className="flex justify-end space-x-2">
-               {/* <button
+
+               <button
                   onClick={onClose}
                   className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600"
                >
                   Cancel
-               </button> */}
+               </button>
+
                <button
-                  onClick={onClose}
-                  className="p-3 mt-3 flex items-center text-sm font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300"
-               >
-                  <AiFillPlusCircle
-                     className='h-4 w-4 mr-2 -ml-0.5'
+                  type="button"
+                  onClick={() => setEditModalOpen(!isEditModalOpen)}
+                  className="py-2 px-3 flex items-center text-sm font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300">
+                  <AiFillEdit
+                     className="h-4 w-4 mr-2 -ml-0.5"
                      size={18}
                   />
-                  <span>AJOUTER PRODUIT</span>
+                  Modifier
                </button>
-               {/* <button
-                  onClick={handleSave}
-                  className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-               >
-                  Save
-               </button> */}
             </div>
          </form>
       </div>
