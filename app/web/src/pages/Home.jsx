@@ -1,7 +1,9 @@
 import { useState } from "react";
-import Product from "../components/ProductLine";
+import Product from "../components/Product";
 import EditProductModal from "../components/EditProductModal";
+import addProduct from "../components/AddProduct";
 import data from "../data";
+
 export default function Home() {
    const [product, setProduct] = useState({
       id: '12345',
@@ -52,7 +54,7 @@ export default function Home() {
             Edit Product
          </button>
 
-         <EditProductModal
+         <addProduct
             isOpen={isEditModalOpen}
             onClose={() => setEditModalOpen(false)}
             product={product}
