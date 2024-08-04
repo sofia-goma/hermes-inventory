@@ -2,24 +2,7 @@ import { useState } from 'react';
 import Input from './Input';
 import { AiFillPlusCircle } from 'react-icons/ai';
 import { useForm } from 'react-hook-form';
-// interface EditProductModalProps {
-//   isOpen: boolean;
-//   onClose: () => void;
-//   product: ProductProps;
-//   onSave: (updatedProduct: ProductProps) => void;
-// }
 
-// interface ProductProps {
-//   id: string;
-//   product: string;
-//   category: string;
-//   status: string;
-//   deliveryDate?: string | null;
-//   created: string;
-//   lastUpdated: string;
-//   price: number;
-//   detail?: string | null;
-// }
 
 export default function AddProduct({ isOpen, onClose, product, onSave }) {
    const { register, handleSubmit } = useForm();
@@ -37,6 +20,7 @@ export default function AddProduct({ isOpen, onClose, product, onSave }) {
    };
 
    const onSubmit = (data) => {
+      alert("submit")
       setOpen(!open);
       console.log(data);
    };
@@ -107,7 +91,14 @@ export default function AddProduct({ isOpen, onClose, product, onSave }) {
             <div className="flex justify-end space-x-2">
                <button
                   onClick={onClose}
-                  className="p-3 mt-3 flex items-center text-sm font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300"
+                  className="p-3 flex items-center text-sm font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300"
+               >
+                  Cancel
+               </button>
+
+               <button
+                  onClick={onClose}
+                  className="p-3 flex items-center text-sm font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300"
                >
                   <AiFillPlusCircle
                      className='h-4 w-4 mr-2 -ml-0.5'
@@ -116,6 +107,7 @@ export default function AddProduct({ isOpen, onClose, product, onSave }) {
                   <span>AJOUTER PRODUIT</span>
                </button>
             </div>
+
          </form>
       </div>
    );
